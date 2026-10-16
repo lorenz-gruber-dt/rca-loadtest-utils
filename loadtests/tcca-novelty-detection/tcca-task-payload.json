@@ -1,0 +1,403 @@
+[
+  {
+    "taskId": "lg-tcca-novelty-detection-loadtest",
+    "groupId": "lg-tcca-novelty-detection-loadtest",
+    "taskName": "Lorenz Gruber topology causal chain analyzer local testing",
+    "analyzerConfig": {
+      "analyzerName": "dt.rca.horizontal.TopologyCausalChainAnalyzer",
+      "analyzerInput": {
+        "generalParameters": {
+          "logVerbosity": "INFO",
+          "timeframe": {
+            "startTime": "now()-60m",
+            "endTime": "now()"
+          }
+        },
+        "maxTraversalDepth": 1,
+        "processingTimeLimitSeconds": 50,
+        "dryRun": false,
+        "ruleSets": [
+          {
+            "hopRules": [
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "SERVICE",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "ERROR",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "targetEvidenceDetectorIds": [
+                  "service_request_failure_rate",
+                  "service_messaging_failure_rate",
+                  "service_faas_failure_rate"
+                ],
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "SERVICE",
+                "sourceEventCategory": "SLOWDOWN",
+                "targetEventCategory": "SLOWDOWN",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "targetEvidenceDetectorIds": [
+                  "service_request_latency_p50",
+                  "service_messaging_latency_p50",
+                  "service_faas_latency_p50"
+                ],
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "SERVICE",
+                "sourceEventCategory": "RESOURCE_CONTENTION",
+                "targetEventCategory": "RESOURCE_CONTENTION",
+                "causalLinkInfo": "SOURCE_EVENT_CAUSES_TARGET_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "FRONTEND",
+                "edgeType": "calls",
+                "targetNodeType": "SERVICE",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "ERROR",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "targetEvidenceDetectorIds": [
+                  "service_request_failure_rate",
+                  "service_messaging_failure_rate",
+                  "service_faas_failure_rate"
+                ],
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "FRONTEND",
+                "edgeType": "calls",
+                "targetNodeType": "SERVICE",
+                "sourceEventCategory": "AVAILABILITY",
+                "targetEventCategory": "ERROR",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "targetEvidenceDetectorIds": [
+                  "service_request_failure_rate",
+                  "service_messaging_failure_rate",
+                  "service_faas_failure_rate"
+                ],
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "FRONTEND",
+                "edgeType": "calls",
+                "targetNodeType": "SERVICE",
+                "sourceEventCategory": "SLOWDOWN",
+                "targetEventCategory": "SLOWDOWN",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "targetEvidenceDetectorIds": [
+                  "service_request_latency_p50",
+                  "service_messaging_latency_p50",
+                  "service_faas_latency_p50"
+                ],
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "FRONTEND",
+                "edgeType": "calls",
+                "targetNodeType": "SERVICE",
+                "sourceEventCategory": "RESOURCE_CONTENTION",
+                "targetEventCategory": "RESOURCE_CONTENTION",
+                "causalLinkInfo": "SOURCE_EVENT_CAUSES_TARGET_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "runs_on",
+                "targetNodeType": "PROCESS",
+                "sourceEventCategory": "RESOURCE_CONTENTION",
+                "targetEventCategory": "RESOURCE_CONTENTION",
+                "causalLinkInfo": "SOURCE_EVENT_CAUSES_TARGET_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "runs_on",
+                "targetNodeType": "PROCESS",
+                "sourceEventCategory": "*",
+                "targetEventCategory": "*",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "runs_on",
+                "targetNodeType": "HOST",
+                "sourceEventCategory": "RESOURCE_CONTENTION",
+                "targetEventCategory": "RESOURCE_CONTENTION",
+                "causalLinkInfo": "SOURCE_EVENT_CAUSES_TARGET_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "runs_on",
+                "targetNodeType": "HOST",
+                "sourceEventCategory": "*",
+                "targetEventCategory": "*",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "runs_on",
+                "targetNodeType": "OTEL_PROCESS",
+                "sourceEventCategory": "RESOURCE_CONTENTION",
+                "targetEventCategory": "RESOURCE_CONTENTION",
+                "causalLinkInfo": "SOURCE_EVENT_CAUSES_TARGET_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "runs_on",
+                "targetNodeType": "OTEL_PROCESS",
+                "sourceEventCategory": "*",
+                "targetEventCategory": "*",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "runs_on",
+                "targetNodeType": "OTEL_HOST",
+                "sourceEventCategory": "RESOURCE_CONTENTION",
+                "targetEventCategory": "RESOURCE_CONTENTION",
+                "causalLinkInfo": "SOURCE_EVENT_CAUSES_TARGET_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "runs_on",
+                "targetNodeType": "OTEL_HOST",
+                "sourceEventCategory": "*",
+                "targetEventCategory": "*",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "AZURE_MICROSOFT_CACHE_REDIS",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "ERROR",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "GCP_FIRESTORE_GOOGLEAPIS_COM_DATABASE",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "ERROR",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "AWS_ELASTICACHE_CACHECLUSTER",
+                "sourceEventCategory": "SLOWDOWN",
+                "targetEventCategory": "SLOWDOWN",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "AWS_RDS_DBINSTANCE",
+                "sourceEventCategory": "SLOWDOWN",
+                "targetEventCategory": "RESOURCE_CONTENTION",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "AWS_RDS_DBCLUSTER",
+                "sourceEventCategory": "SLOWDOWN",
+                "targetEventCategory": "RESOURCE_CONTENTION",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "AZURE_MICROSOFT_SQL_SERVERS_DATABASES",
+                "sourceEventCategory": "SLOWDOWN",
+                "targetEventCategory": "RESOURCE_CONTENTION",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "DB_INSTANCE_POSTGRES",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "AVAILABILITY",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "DB_INSTANCE_MSSQL",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "AVAILABILITY",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "DB_INSTANCE_MYSQL",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "AVAILABILITY",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "DB_INSTANCE_ORACLE",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "AVAILABILITY",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "DB_INSTANCE_HANA",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "AVAILABILITY",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "DB_INSTANCE_MARIADB",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "AVAILABILITY",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              },
+              {
+                "sourceNodeType": "SERVICE",
+                "edgeType": "calls",
+                "targetNodeType": "DB_INSTANCE_DB2",
+                "sourceEventCategory": "ERROR",
+                "targetEventCategory": "AVAILABILITY",
+                "causalLinkInfo": "TARGET_EVENT_CAUSES_SOURCE_EVENT",
+                "direction": "forward",
+                "mergingWindowMinutes": 15
+              }
+            ]
+          }
+        ],
+        "cache": {
+          "enabled": false
+        },
+        "noveltyDetectors": [
+          {
+            "id": "service_request_failure_rate",
+            "nodeType": "SERVICE",
+            "eventName": "Request failure rate increase found by RCA",
+            "eventCategory": "ERROR",
+            "eventType": "ERROR_EVENT",
+            "builtinDqlTemplate": "REQUEST_FAILURE_RATE"
+          },
+          {
+            "id": "service_request_latency_p50",
+            "nodeType": "SERVICE",
+            "eventName": "Request response time degradation found by RCA",
+            "eventCategory": "SLOWDOWN",
+            "eventType": "PERFORMANCE_EVENT",
+            "builtinDqlTemplate": "REQUEST_LATENCY_P50"
+          },
+          {
+            "id": "service_messaging_failure_rate",
+            "nodeType": "SERVICE",
+            "eventName": "Message processing failure rate increase found by RCA",
+            "eventCategory": "ERROR",
+            "eventType": "ERROR_EVENT",
+            "builtinDqlTemplate": "MESSAGING_FAILURE_RATE"
+          },
+          {
+            "id": "service_messaging_latency_p50",
+            "nodeType": "SERVICE",
+            "eventName": "Message processing latency degradation found by RCA",
+            "eventCategory": "SLOWDOWN",
+            "eventType": "PERFORMANCE_EVENT",
+            "builtinDqlTemplate": "MESSAGING_LATENCY_P50"
+          },
+          {
+            "id": "service_faas_failure_rate",
+            "nodeType": "SERVICE",
+            "eventName": "FaaS failure rate increase found by RCA",
+            "eventCategory": "ERROR",
+            "eventType": "ERROR_EVENT",
+            "builtinDqlTemplate": "FAAS_FAILURE_RATE"
+          },
+          {
+            "id": "service_faas_latency_p50",
+            "nodeType": "SERVICE",
+            "eventName": "FaaS latency degradation found by RCA",
+            "eventCategory": "SLOWDOWN",
+            "eventType": "PERFORMANCE_EVENT",
+            "builtinDqlTemplate": "FAAS_LATENCY_P50"
+          }
+        ]
+      }
+    },
+    "authenticationConfig": {
+      "actor": "febdfadf-3717-4c1e-8630-1a6672af1a28",
+      "scopes": [
+        "storage:metrics:read",
+        "storage:buckets:read",
+        "storage:events:read",
+        "storage:smartscape:read"
+      ]
+    },
+    "ingestConfig": {
+      "dtOpenPipelineSource": "generated_davis_events",
+      "dqlTransformer": null
+    },
+    "scheduleConfig": {
+      "scheduleType": "FIXED_DELAY",
+      "scheduleExpression": "PT1M"
+    }
+  }
+]

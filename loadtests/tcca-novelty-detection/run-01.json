@@ -1,0 +1,232 @@
+{
+  "tenant": "gan7755d",
+  "timeframe": {
+    "from": "2026-10-15T14:04:00Z",
+    "to": "2026-10-15T14:28:00Z",
+    "seconds": 1440
+  },
+  "pups": {
+    "total": 700,
+    "avgPerRun": 30.43,
+    "avgPerMinute": 29.17
+  },
+  "rcaEvents": {
+    "total": 2300,
+    "open": 700,
+    "bornClosed": 1600,
+    "avgPerRun": 100.0,
+    "avgPerMinute": 95.83,
+    "bornClosedPct": 69.57
+  },
+  "rootEventsFetched": {
+    "total": 2300,
+    "avgPerRun": 100.0,
+    "avgPerMinute": 95.83
+  },
+  "runs": {
+    "total": 23,
+    "withWarnings": 0,
+    "withWarningsPct": 0.0,
+    "topWarningMessages": []
+  },
+  "durations": {
+    "analysis": {
+      "avgMs": 2030.6,
+      "maxMs": 2595.0
+    },
+    "eventsFetch": {
+      "avgMs": 105.7,
+      "maxMs": 120.0
+    },
+    "detector": {
+      "avgMs": 1815.7,
+      "maxMs": 2371.0
+    }
+  },
+  "grailQueryCost": {
+    "queries": 115,
+    "totalCostDt": 0.00243,
+    "extrapolatedCostDtPerYear": 53.22,
+    "costRateDtPerCpuSecond": 4e-05,
+    "sharePctOfCost": {
+      "eventsSnapshots": 0.98,
+      "smartscapeEdges": 2.02,
+      "timeseries": 97.0,
+      "other": 0.0
+    },
+    "sharePctByQueryType": {
+      "timeseries": 97.0,
+      "smartscapeEdges": 2.02,
+      "fetch dt.davis.events.snapshots": 0.98
+    }
+  },
+  "grailCpuTime": {
+    "totalSeconds": 60.753,
+    "requestQueries": {
+      "queries": 23,
+      "totalCpuSeconds": 58.698,
+      "avgCpuSeconds": 2.5521,
+      "maxCpuSeconds": 2.9258,
+      "shareOfTimeseriesCpuPct": 99.61,
+      "shareOfTotalCpuPct": 96.62
+    },
+    "faasQueries": {
+      "queries": 23,
+      "totalCpuSeconds": 0.02,
+      "avgCpuSeconds": 0.0009,
+      "maxCpuSeconds": 0.0167,
+      "shareOfTimeseriesCpuPct": 0.03,
+      "shareOfTotalCpuPct": 0.03
+    },
+    "messagingProcessQueries": {
+      "queries": 23,
+      "totalCpuSeconds": 0.211,
+      "avgCpuSeconds": 0.0092,
+      "maxCpuSeconds": 0.1951,
+      "shareOfTimeseriesCpuPct": 0.36,
+      "shareOfTotalCpuPct": 0.35
+    },
+    "sharePctOfTotalCpu": {
+      "request": 96.62,
+      "faas": 0.03,
+      "messaging": 0.35
+    }
+  },
+  "timeseries": {
+    "intervalSeconds": 60,
+    "from": "2026-10-15T14:04:00Z",
+    "analysisDurationMs": {
+      "avg": [
+        null,
+        2595.0,
+        2545.0,
+        2556.0,
+        2416.0,
+        1885.0,
+        2092.0,
+        1948.0,
+        1881.0,
+        1852.0,
+        1941.0,
+        1901.0,
+        1894.0,
+        1981.0,
+        1977.0,
+        1873.0,
+        1941.0,
+        1908.0,
+        1944.0,
+        1932.0,
+        1897.0,
+        1901.0,
+        1909.0,
+        1934.0
+      ],
+      "max": [
+        null,
+        2595.0,
+        2545.0,
+        2556.0,
+        2416.0,
+        1885.0,
+        2092.0,
+        1948.0,
+        1881.0,
+        1852.0,
+        1941.0,
+        1901.0,
+        1894.0,
+        1981.0,
+        1977.0,
+        1873.0,
+        1941.0,
+        1908.0,
+        1944.0,
+        1932.0,
+        1897.0,
+        1901.0,
+        1909.0,
+        1934.0
+      ]
+    },
+    "detectorDurationMs": {
+      "avg": [
+        null,
+        2371.0,
+        2333.0,
+        2365.0,
+        1769.0,
+        1660.0,
+        1901.0,
+        1766.0,
+        1710.0,
+        1675.0,
+        1756.0,
+        1720.0,
+        1710.0,
+        1787.0,
+        1786.0,
+        1696.0,
+        1733.0,
+        1722.0,
+        1718.0,
+        1729.0,
+        1708.0,
+        1704.0,
+        1728.0,
+        1713.0
+      ],
+      "max": [
+        null,
+        2371.0,
+        2333.0,
+        2365.0,
+        1769.0,
+        1660.0,
+        1901.0,
+        1766.0,
+        1710.0,
+        1675.0,
+        1756.0,
+        1720.0,
+        1710.0,
+        1787.0,
+        1786.0,
+        1696.0,
+        1733.0,
+        1722.0,
+        1718.0,
+        1729.0,
+        1708.0,
+        1704.0,
+        1728.0,
+        1713.0
+      ]
+    },
+    "requestQueryCpuSeconds": [
+      2.0996,
+      2.0914,
+      2.0911,
+      1.538,
+      2.0908,
+      2.6464,
+      2.4075,
+      2.441,
+      2.4724,
+      2.5169,
+      2.5432,
+      2.612,
+      2.7239,
+      2.7575,
+      2.7441,
+      2.8019,
+      2.7938,
+      2.8451,
+      2.8545,
+      2.8761,
+      2.9124,
+      2.913,
+      2.9258
+    ]
+  }
+}

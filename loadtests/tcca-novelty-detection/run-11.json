@@ -1,0 +1,231 @@
+{
+  "tenant": "gan7755d",
+  "timeframe": {
+    "from": "2026-10-16T13:40:00Z",
+    "to": "2026-10-16T14:04:00Z",
+    "seconds": 1440
+  },
+  "pups": {
+    "total": 5,
+    "avgPerRun": 0.24,
+    "avgPerMinute": 0.21
+  },
+  "rcaEvents": {
+    "total": 10500,
+    "open": 2500,
+    "bornClosed": 8000,
+    "avgPerRun": 500.0,
+    "avgPerMinute": 437.5,
+    "bornClosedPct": 76.19
+  },
+  "rootEventsFetched": {
+    "total": 21,
+    "avgPerRun": 1.0,
+    "avgPerMinute": 0.88
+  },
+  "runs": {
+    "total": 21,
+    "withWarnings": 0,
+    "withWarningsPct": 0.0,
+    "topWarningMessages": []
+  },
+  "durations": {
+    "analysis": {
+      "avgMs": 6881.8,
+      "maxMs": 7131.0
+    },
+    "eventsFetch": {
+      "avgMs": 102.9,
+      "maxMs": 122.0
+    },
+    "detector": {
+      "avgMs": 6687.6,
+      "maxMs": 6943.0
+    }
+  },
+  "grailQueryCost": {
+    "queries": 115,
+    "totalCostDt": 0.010816,
+    "extrapolatedCostDtPerYear": 236.87,
+    "costRateDtPerCpuSecond": 4e-05,
+    "sharePctOfCost": {
+      "eventsSnapshots": 0.12,
+      "smartscapeEdges": 0.11,
+      "timeseries": 99.76,
+      "other": 0.02
+    },
+    "sharePctByQueryType": {
+      "timeseries": 99.76,
+      "fetch dt.davis.events.snapshots": 0.12,
+      "smartscapeEdges": 0.11,
+      "fetch logs": 0.02
+    }
+  },
+  "grailCpuTime": {
+    "totalSeconds": 270.397,
+    "requestQueries": {
+      "queries": 21,
+      "totalCpuSeconds": 269.73,
+      "avgCpuSeconds": 12.8443,
+      "maxCpuSeconds": 15.2783,
+      "shareOfTimeseriesCpuPct": 100.0,
+      "shareOfTotalCpuPct": 99.75
+    },
+    "faasQueries": {
+      "queries": 21,
+      "totalCpuSeconds": 0.003,
+      "avgCpuSeconds": 0.0001,
+      "maxCpuSeconds": 0.0002,
+      "shareOfTimeseriesCpuPct": 0.0,
+      "shareOfTotalCpuPct": 0.0
+    },
+    "messagingProcessQueries": {
+      "queries": 21,
+      "totalCpuSeconds": 0.003,
+      "avgCpuSeconds": 0.0001,
+      "maxCpuSeconds": 0.0002,
+      "shareOfTimeseriesCpuPct": 0.0,
+      "shareOfTotalCpuPct": 0.0
+    },
+    "sharePctOfTotalCpu": {
+      "request": 99.75,
+      "faas": 0.0,
+      "messaging": 0.0
+    }
+  },
+  "timeseries": {
+    "intervalSeconds": 60,
+    "from": "2026-10-16T13:40:00Z",
+    "analysisDurationMs": {
+      "avg": [
+        6756.0,
+        6754.0,
+        null,
+        6747.0,
+        6798.0,
+        6811.0,
+        6854.0,
+        6798.0,
+        6831.0,
+        6896.0,
+        6838.0,
+        6935.0,
+        null,
+        6908.0,
+        6903.0,
+        6896.0,
+        7021.0,
+        6921.0,
+        6938.0,
+        6892.0,
+        6941.0,
+        null,
+        6949.0,
+        7131.0
+      ],
+      "max": [
+        6756.0,
+        6754.0,
+        null,
+        6747.0,
+        6798.0,
+        6811.0,
+        6854.0,
+        6798.0,
+        6831.0,
+        6896.0,
+        6838.0,
+        6935.0,
+        null,
+        6908.0,
+        6903.0,
+        6896.0,
+        7021.0,
+        6921.0,
+        6938.0,
+        6892.0,
+        6941.0,
+        null,
+        6949.0,
+        7131.0
+      ]
+    },
+    "detectorDurationMs": {
+      "avg": [
+        6540.0,
+        6536.0,
+        null,
+        6528.0,
+        6583.0,
+        6596.0,
+        6668.0,
+        6634.0,
+        6641.0,
+        6719.0,
+        6656.0,
+        6744.0,
+        null,
+        6732.0,
+        6709.0,
+        6718.0,
+        6787.0,
+        6734.0,
+        6750.0,
+        6716.0,
+        6741.0,
+        null,
+        6764.0,
+        6943.0
+      ],
+      "max": [
+        6540.0,
+        6536.0,
+        null,
+        6528.0,
+        6583.0,
+        6596.0,
+        6668.0,
+        6634.0,
+        6641.0,
+        6719.0,
+        6656.0,
+        6744.0,
+        null,
+        6732.0,
+        6709.0,
+        6718.0,
+        6787.0,
+        6734.0,
+        6750.0,
+        6716.0,
+        6741.0,
+        null,
+        6764.0,
+        6943.0
+      ]
+    },
+    "requestQueryCpuSeconds": [
+      15.2783,
+      12.5543,
+      12.5263,
+      12.5828,
+      12.5951,
+      12.7087,
+      12.6523,
+      12.6583,
+      12.8112,
+      12.6871,
+      12.8136,
+      12.8447,
+      12.7512,
+      12.7214,
+      12.8139,
+      12.8215,
+      12.8019,
+      12.6985,
+      12.7747,
+      12.8034,
+      12.8311
+    ]
+  }
+}

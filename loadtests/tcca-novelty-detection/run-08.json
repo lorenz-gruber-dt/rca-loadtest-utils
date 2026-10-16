@@ -1,0 +1,229 @@
+{
+  "tenant": "gan7755d",
+  "timeframe": {
+    "from": "2026-10-16T12:02:00Z",
+    "to": "2026-10-16T12:25:00Z",
+    "seconds": 1380
+  },
+  "pups": {
+    "total": 0,
+    "avgPerRun": 0.0,
+    "avgPerMinute": 0.0
+  },
+  "rcaEvents": {
+    "total": 0,
+    "open": 0,
+    "bornClosed": 0,
+    "avgPerRun": 0.0,
+    "avgPerMinute": 0.0,
+    "bornClosedPct": null
+  },
+  "rootEventsFetched": {
+    "total": 19000,
+    "avgPerRun": 1000.0,
+    "avgPerMinute": 826.09
+  },
+  "runs": {
+    "total": 19,
+    "withWarnings": 19,
+    "withWarningsPct": 100.0,
+    "topWarningMessages": [
+      {
+        "message": "[ERROR] Template 'request_failure_rate': timeseries query failed: Request time limit was exceeded for DQL result. Please try to narrow down the query.",
+        "count": 19
+      }
+    ]
+  },
+  "durations": {
+    "analysis": {
+      "avgMs": 11498.5,
+      "maxMs": 11837.0
+    },
+    "eventsFetch": {
+      "avgMs": 180.5,
+      "maxMs": 387.0
+    },
+    "detector": {
+      "avgMs": 10373.1,
+      "maxMs": 10431.0
+    }
+  },
+  "grailQueryCost": {
+    "queries": 95,
+    "totalCostDt": 0.016356,
+    "extrapolatedCostDtPerYear": 373.76,
+    "costRateDtPerCpuSecond": 4e-05,
+    "sharePctOfCost": {
+      "eventsSnapshots": 0.2,
+      "smartscapeEdges": 3.93,
+      "timeseries": 95.88,
+      "other": 0.0
+    },
+    "sharePctByQueryType": {
+      "timeseries": 95.88,
+      "smartscapeEdges": 3.93,
+      "fetch dt.davis.events.snapshots": 0.2
+    }
+  },
+  "grailCpuTime": {
+    "totalSeconds": 408.889,
+    "requestQueries": {
+      "queries": 19,
+      "totalCpuSeconds": 391.996,
+      "avgCpuSeconds": 20.6314,
+      "maxCpuSeconds": 20.7323,
+      "shareOfTimeseriesCpuPct": 99.99,
+      "shareOfTotalCpuPct": 95.87
+    },
+    "faasQueries": {
+      "queries": 19,
+      "totalCpuSeconds": 0.017,
+      "avgCpuSeconds": 0.0009,
+      "maxCpuSeconds": 0.0134,
+      "shareOfTimeseriesCpuPct": 0.0,
+      "shareOfTotalCpuPct": 0.0
+    },
+    "messagingProcessQueries": {
+      "queries": 19,
+      "totalCpuSeconds": 0.028,
+      "avgCpuSeconds": 0.0015,
+      "maxCpuSeconds": 0.0136,
+      "shareOfTimeseriesCpuPct": 0.01,
+      "shareOfTotalCpuPct": 0.01
+    },
+    "sharePctOfTotalCpu": {
+      "request": 95.87,
+      "faas": 0.0,
+      "messaging": 0.01
+    }
+  },
+  "timeseries": {
+    "intervalSeconds": 60,
+    "from": "2026-10-16T12:02:00Z",
+    "analysisDurationMs": {
+      "avg": [
+        11408.0,
+        11368.0,
+        11346.0,
+        11389.0,
+        null,
+        11837.0,
+        11523.0,
+        11486.0,
+        11495.0,
+        null,
+        11444.0,
+        11550.0,
+        11426.0,
+        11505.0,
+        11431.0,
+        null,
+        11574.0,
+        11567.0,
+        11524.0,
+        11575.0,
+        11503.0,
+        null,
+        11521.0
+      ],
+      "max": [
+        11408.0,
+        11368.0,
+        11346.0,
+        11389.0,
+        null,
+        11837.0,
+        11523.0,
+        11486.0,
+        11495.0,
+        null,
+        11444.0,
+        11550.0,
+        11426.0,
+        11505.0,
+        11431.0,
+        null,
+        11574.0,
+        11567.0,
+        11524.0,
+        11575.0,
+        11503.0,
+        null,
+        11521.0
+      ]
+    },
+    "detectorDurationMs": {
+      "avg": [
+        10365.0,
+        10329.0,
+        10337.0,
+        10357.0,
+        null,
+        10388.0,
+        10390.0,
+        10409.0,
+        10360.0,
+        null,
+        10380.0,
+        10377.0,
+        10329.0,
+        10431.0,
+        10379.0,
+        null,
+        10397.0,
+        10371.0,
+        10376.0,
+        10391.0,
+        10350.0,
+        null,
+        10372.0
+      ],
+      "max": [
+        10365.0,
+        10329.0,
+        10337.0,
+        10357.0,
+        null,
+        10388.0,
+        10390.0,
+        10409.0,
+        10360.0,
+        null,
+        10380.0,
+        10377.0,
+        10329.0,
+        10431.0,
+        10379.0,
+        null,
+        10397.0,
+        10371.0,
+        10376.0,
+        10391.0,
+        10350.0,
+        null,
+        10372.0
+      ]
+    },
+    "requestQueryCpuSeconds": [
+      20.7268,
+      20.7035,
+      20.7042,
+      20.7082,
+      20.6962,
+      20.7323,
+      20.7089,
+      20.7075,
+      20.7134,
+      20.7163,
+      20.7112,
+      20.7146,
+      20.6959,
+      20.6966,
+      20.4438,
+      20.4191,
+      20.4042,
+      20.3958,
+      20.3973
+    ]
+  }
+}

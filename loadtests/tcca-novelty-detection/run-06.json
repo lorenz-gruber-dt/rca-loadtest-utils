@@ -1,0 +1,230 @@
+{
+  "tenant": "gan7755d",
+  "timeframe": {
+    "from": "2026-10-16T10:59:00Z",
+    "to": "2026-10-16T11:23:00Z",
+    "seconds": 1440
+  },
+  "pups": {
+    "total": 0,
+    "avgPerRun": 0.0,
+    "avgPerMinute": 0.0
+  },
+  "rcaEvents": {
+    "total": 0,
+    "open": 0,
+    "bornClosed": 0,
+    "avgPerRun": 0.0,
+    "avgPerMinute": 0.0,
+    "bornClosedPct": null
+  },
+  "rootEventsFetched": {
+    "total": 10500,
+    "avgPerRun": 500.0,
+    "avgPerMinute": 437.5
+  },
+  "runs": {
+    "total": 21,
+    "withWarnings": 0,
+    "withWarningsPct": 0.0,
+    "topWarningMessages": []
+  },
+  "durations": {
+    "analysis": {
+      "avgMs": 6925.7,
+      "maxMs": 7316.0
+    },
+    "eventsFetch": {
+      "avgMs": 126.7,
+      "maxMs": 150.0
+    },
+    "detector": {
+      "avgMs": 6681.2,
+      "maxMs": 7072.0
+    }
+  },
+  "grailQueryCost": {
+    "queries": 105,
+    "totalCostDt": 0.009503,
+    "extrapolatedCostDtPerYear": 208.12,
+    "costRateDtPerCpuSecond": 4e-05,
+    "sharePctOfCost": {
+      "eventsSnapshots": 0.29,
+      "smartscapeEdges": 0.41,
+      "timeseries": 99.3,
+      "other": 0.0
+    },
+    "sharePctByQueryType": {
+      "timeseries": 99.3,
+      "smartscapeEdges": 0.41,
+      "fetch dt.davis.events.snapshots": 0.29
+    }
+  },
+  "grailCpuTime": {
+    "totalSeconds": 237.579,
+    "requestQueries": {
+      "queries": 21,
+      "totalCpuSeconds": 235.92,
+      "avgCpuSeconds": 11.2343,
+      "maxCpuSeconds": 12.0347,
+      "shareOfTimeseriesCpuPct": 100.0,
+      "shareOfTotalCpuPct": 99.3
+    },
+    "faasQueries": {
+      "queries": 21,
+      "totalCpuSeconds": 0.003,
+      "avgCpuSeconds": 0.0001,
+      "maxCpuSeconds": 0.0002,
+      "shareOfTimeseriesCpuPct": 0.0,
+      "shareOfTotalCpuPct": 0.0
+    },
+    "messagingProcessQueries": {
+      "queries": 21,
+      "totalCpuSeconds": 0.003,
+      "avgCpuSeconds": 0.0001,
+      "maxCpuSeconds": 0.0002,
+      "shareOfTimeseriesCpuPct": 0.0,
+      "shareOfTotalCpuPct": 0.0
+    },
+    "sharePctOfTotalCpu": {
+      "request": 99.3,
+      "faas": 0.0,
+      "messaging": 0.0
+    }
+  },
+  "timeseries": {
+    "intervalSeconds": 60,
+    "from": "2026-10-16T10:59:00Z",
+    "analysisDurationMs": {
+      "avg": [
+        6647.0,
+        7200.0,
+        6859.0,
+        null,
+        6977.0,
+        7316.0,
+        6884.0,
+        6965.0,
+        6894.0,
+        6900.0,
+        6891.0,
+        6867.0,
+        null,
+        6828.0,
+        6964.0,
+        6964.0,
+        6892.0,
+        6815.0,
+        6978.0,
+        6972.0,
+        6927.0,
+        null,
+        6833.0,
+        6866.0
+      ],
+      "max": [
+        6647.0,
+        7200.0,
+        6859.0,
+        null,
+        6977.0,
+        7316.0,
+        6884.0,
+        6965.0,
+        6894.0,
+        6900.0,
+        6891.0,
+        6867.0,
+        null,
+        6828.0,
+        6964.0,
+        6964.0,
+        6892.0,
+        6815.0,
+        6978.0,
+        6972.0,
+        6927.0,
+        null,
+        6833.0,
+        6866.0
+      ]
+    },
+    "detectorDurationMs": {
+      "avg": [
+        6417.0,
+        6967.0,
+        6579.0,
+        null,
+        6729.0,
+        7072.0,
+        6641.0,
+        6700.0,
+        6636.0,
+        6671.0,
+        6631.0,
+        6623.0,
+        null,
+        6589.0,
+        6715.0,
+        6742.0,
+        6655.0,
+        6572.0,
+        6723.0,
+        6717.0,
+        6697.0,
+        null,
+        6589.0,
+        6641.0
+      ],
+      "max": [
+        6417.0,
+        6967.0,
+        6579.0,
+        null,
+        6729.0,
+        7072.0,
+        6641.0,
+        6700.0,
+        6636.0,
+        6671.0,
+        6631.0,
+        6623.0,
+        null,
+        6589.0,
+        6715.0,
+        6742.0,
+        6655.0,
+        6572.0,
+        6723.0,
+        6717.0,
+        6697.0,
+        null,
+        6589.0,
+        6641.0
+      ]
+    },
+    "requestQueryCpuSeconds": [
+      9.547,
+      10.5998,
+      10.1453,
+      10.4551,
+      10.9715,
+      10.7132,
+      10.9369,
+      11.0469,
+      11.1719,
+      11.2931,
+      11.3168,
+      11.3732,
+      11.5915,
+      11.7399,
+      11.6622,
+      11.649,
+      11.8888,
+      11.9114,
+      11.9426,
+      11.929,
+      12.0347
+    ]
+  }
+}
