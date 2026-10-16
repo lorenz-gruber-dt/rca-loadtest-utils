@@ -1,0 +1,68 @@
+{
+  "_about": "Output of rca_loadtest_summary.py --tenant <id> --timeframe <2h|30m|7d|START/END ISO8601>. JSON on stdout, progress/errors on stderr. All times UTC. Values are null when there is no data to compute them (e.g. no runs). 'Run' = one analyzer execution; per-run averages divide by the count of the matching log messages.",
+  "_sources": "Davis analyzer execution logs (dt.rca.horizontal.* analyzers, filtered to the tenant; nested info messages analysis_finished / bfs_stats / events_fetched, plus warning messages) and DQL query logs of the Grail queries those analyzers issued. CPU time of a query = backend real_ns + frontend cpu_ns; cost = CPU seconds x 0.00004 DT$.",
+
+  "tenant": "string - tenant id the data is filtered to",
+  "timeframe": {
+    "from": "ISO timestamp (UTC)",
+    "to": "ISO timestamp (UTC)",
+    "seconds": "int - window length; used for per-minute rates and cost extrapolation"
+  },
+
+  "pups": {
+    "total": "int - sum of `pups` in analysis_finished messages",
+    "avgPerRun": "number - total / number of analysis_finished messages",
+    "avgPerMinute": "number - total / timeframe minutes"
+  },
+  "rcaEvents": {
+    "total": "int - open + bornClosed (assumes the two are disjoint)",
+    "open": "int - sum of `rcaEvents` in analysis_finished",
+    "bornClosed": "int - sum of `bornClosedRcaEvents` in bfs_stats (events created already closed)",
+    "avgPerRun": "number - total / number of analysis_finished messages",
+    "avgPerMinute": "number",
+    "bornClosedPct": "number 0-100 - bornClosed / total"
+  },
+  "rootEventsFetched": {
+    "total": "int - sum of `events` in events_fetched (input events for the analysis)",
+    "avgPerRun": "number - total / number of events_fetched messages",
+    "avgPerMinute": "number"
+  },
+
+  "runs": {
+    "total": "int - analyzer executions with a result status",
+    "withWarnings": "int - executions with status SUCCESSFUL_WITH_WARNINGS",
+    "withWarningsPct": "number 0-100",
+    "topWarningMessages": "[{message: string, count: int}] - up to 10, most frequent first; messages are not normalised"
+  },
+
+  "durations": {
+    "analysis": "{avgMs, maxMs} - analysis_finished.durationMs per run",
+    "eventsFetch": "{avgMs, maxMs} - events_fetched.durationMs per run",
+    "detector": "{avgMs, maxMs} - per run, sum of detect.durationMs over all depths in bfs_stats"
+  },
+
+  "grailQueryCost": {
+    "queries": "int - number of analyzer DQL queries",
+    "totalCostDt": "number - DT$ for the timeframe (CPU seconds x costRateDtPerCpuSecond)",
+    "extrapolatedCostDtPerYear": "number - totalCostDt scaled to a year (assumes the timeframe is representative)",
+    "costRateDtPerCpuSecond": "number - fixed 0.00004",
+    "sharePctOfCost": "{eventsSnapshots, smartscapeEdges, timeseries, other} - % of total CPU by query type (`fetch dt.davis.events.snapshots`, `smartscapeEdges`, `timeseries`, everything else)",
+    "sharePctByQueryType": "{<type>: pct} - same, per query type (first DQL command or `fetch <data object>`), largest first"
+  },
+
+  "grailCpuTime": {
+    "totalSeconds": "number - CPU seconds of all analyzer DQL queries",
+    "requestQueries": "timeseries queries on dt.service.request.* metrics: {queries, totalCpuSeconds, avgCpuSeconds, maxCpuSeconds, shareOfTimeseriesCpuPct, shareOfTotalCpuPct}",
+    "faasQueries": "same shape, for dt.service.faas_invoke.* metrics",
+    "messagingProcessQueries": "same shape, for dt.service.messaging.process.* metrics",
+    "sharePctOfTotalCpu": "{request, faas, messaging} - % of total CPU per family"
+  },
+
+  "timeseries": {
+    "intervalSeconds": "int - bucket width (~timeframe/60, whole minutes, min 60)",
+    "from": "ISO timestamp - bucket 0 starts here (may be slightly earlier since DQL aligns buckets)",
+    "analysisDurationMs": "{avg: number[], max: number[]} - per bucket, same source as durations.analysis; null = empty bucket",
+    "detectorDurationMs": "{avg: number[], max: number[]} - per bucket, same source as durations.detector; null = empty bucket",
+    "requestQueryCpuSeconds": "number[] - CPU seconds of each individual request timeseries query in chronological order; NOT bucketed, no timestamps"
+  }
+}
